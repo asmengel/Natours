@@ -74,9 +74,23 @@
                 </div>
                 <div class='col-1-of-2'>
                     <div class="composition">
-                        <img src="img/nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
+                        <!-- various widths keep src for the sake of old browsers  -->
+                        <img srcset='img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w'
+                            sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px' alt='Photo 1'
+                            class="composition__photo composition__photo--p1"
+                            src='/img/nat-1-large.jpg'>
+
+                            <img srcset='img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w'
+                            sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px' alt='Photo 2'
+                            class="composition__photo composition__photo--p2"
+                            src='/img/nat-2-large.jpg'>
+                            <img srcset='img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w'
+                            sizes='(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px' alt='Photo 3'
+                            class="composition__photo composition__photo--p3"
+                            src='/img/nat-3-large.jpg'>
+                        <!-- <img src="img/nat-1-large.jpg" alt="photo 1" class="composition__photo composition__photo--p1">
                         <img src="img/nat-2-large.jpg" alt="photo 2" class="composition__photo composition__photo--p2">
-                        <img src="img/nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3">
+                        <img src="img/nat-3-large.jpg" alt="photo 3" class="composition__photo composition__photo--p3"> -->
                     </div>
                 </div>
             </div>
@@ -319,7 +333,15 @@
     </main>
     <footer class='footer'>
         <div class="footer__logo-box">
-            <img src='img/logo-green-2x.png' alt='Full Logo' class='footer__logo'>
+
+            <picture class='footer__logo'>
+                <source srcset='img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x' media=(max-width:
+                    37.5em)>
+                <img srcset='img/logo-green-1x.png 1x, img/logo-green-2x.png 2x' alt='Full Logo' class='footer__logo'>
+            </picture>
+            <!-- below is density switching -->
+            <!-- <img srcset='img/logo-green-1x.png 1x, img/logo-green-2x.png 2x' alt='Full Logo' class='footer__logo'> -->
+
         </div>
         <div class="row">
             <div class="col-1-of-2">
@@ -336,30 +358,36 @@
             </div>
             <div class="col-1-of-2">
                 <p class="footer__copyright">
-                    Built by <a href='#' class='footer__link'>Anthony Mengel</a> for <a href='#' class='footer__link'>animation</a>
+                    Built by <a href='#' class='footer__link'>Anthony Mengel</a> for <a href='#'
+                        class='footer__link'>animation</a>
                     training. This is where your copyright information would be placed.
                 </p>
 
             </div>
         </div>
     </footer>
-<div class="popup" id='popup'>
-    <div class="popup__content">
-        <div class="popup__left">
-        <img src="img/nat-8.jpg" alt="Tour Photo" class='popup__img'>
-        <img src="img/nat-9.jpg" alt="Tour Photo" class='popup__img'>
-        </div>
-        <div class="popup__right">
-            <a href="#section-tours" class="popup__close">&times;</a>
-            <h2 class='heading-secondary u-margin-bottom-small'>Start Booking Now</h2>
-            <h3 class='heading-tertiary u-margin-bottom-small'>Important &ndash; please read these terms before booking</h3>
-            <p class='popup__text'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel mattis nunc. Cras sit amet lorem est. Aenean nec leo sem. Mauris quis orci ipsum. Integer volutpat quam id est volutpat facilisis. Nullam vehicula laoreet cursus. Fusce porttitor tellus vel elementum iaculis. Pellentesque felis risus, semper fringilla porta a, egestas sit amet metus. Vestibulum auctor turpis consectetur semper iaculis. Aenean dapibus diam nec nunc hendrerit, vel dignissim dolor fringilla.
-            </p>
-            <a href="#" class="btn btn--green">Book Now</a>
+    <div class="popup" id='popup'>
+        <div class="popup__content">
+            <div class="popup__left">
+                <img src="img/nat-8.jpg" alt="Tour Photo" class='popup__img'>
+                <img src="img/nat-9.jpg" alt="Tour Photo" class='popup__img'>
+            </div>
+            <div class="popup__right">
+                <a href="#section-tours" class="popup__close">&times;</a>
+                <h2 class='heading-secondary u-margin-bottom-small'>Start Booking Now</h2>
+                <h3 class='heading-tertiary u-margin-bottom-small'>Important &ndash; please read these terms before
+                    booking</h3>
+                <p class='popup__text'>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel mattis nunc. Cras sit amet
+                    lorem est. Aenean nec leo sem. Mauris quis orci ipsum. Integer volutpat quam id est volutpat
+                    facilisis. Nullam vehicula laoreet cursus. Fusce porttitor tellus vel elementum iaculis.
+                    Pellentesque felis risus, semper fringilla porta a, egestas sit amet metus. Vestibulum auctor turpis
+                    consectetur semper iaculis. Aenean dapibus diam nec nunc hendrerit, vel dignissim dolor fringilla.
+                </p>
+                <a href="#" class="btn btn--green">Book Now</a>
+            </div>
         </div>
     </div>
-</div>
 </body>
 
 </html>

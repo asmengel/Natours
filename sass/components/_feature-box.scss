@@ -17,7 +17,12 @@
       $color-primary-dark
     );
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent;
+
+    @include respond(tab-port) {
+      margin-bottom: 0;
+    }
   }
   &:hover {
     transform: translateY(-1.5rem) scale(1.03);
